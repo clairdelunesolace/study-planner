@@ -10,3 +10,22 @@ Content-Type: application/json
 
 ###查看所有任务
 GET http://localhost:8080/api/tasks
+
+###查看指定任务
+GET http://localhost:8080/api/tasks/1
+
+###修改任务
+PUT http://localhost:8080/api/tasks/1
+Content-Type: application/json
+
+{
+  "title": "Review Spring Boot CRUD",
+  "description": "Finish task update and delete APIs",
+  "deadline": "2026-07-28"
+}
+
+### 标记任务完成
+PATCH http://localhost:8080/api/tasks/1/complete
+
+###删除任务
+DELETE http://localhost:8080/api/tasks/1
