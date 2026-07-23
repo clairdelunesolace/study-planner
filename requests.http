@@ -20,6 +20,9 @@ GET http://localhost:8080/api/tasks?status=pending
 ###查看指定任务
 GET http://localhost:8080/api/tasks/1
 
+###查看本周完成数量
+GET http://localhost:8080/api/tasks/stats/weekly
+
 ###修改任务
 PUT http://localhost:8080/api/tasks/1
 Content-Type: application/json
@@ -31,7 +34,7 @@ Content-Type: application/json
 }
 
 ### 标记任务完成
-PATCH http://localhost:8080/api/tasks/1/complete
+PATCH http://localhost:8080/api/tasks/2/complete
 
 ###删除任务
 DELETE http://localhost:8080/api/tasks/1
