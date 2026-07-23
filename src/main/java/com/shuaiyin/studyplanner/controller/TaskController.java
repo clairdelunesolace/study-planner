@@ -18,7 +18,16 @@ public class TaskController {
     }
 
     @GetMapping
-    public List<Task> getAllTasks(){
+    public List<Task> getTasks(
+        @RequestParam(required = false) String status
+    ){
+        if("completed".equalsIgnoreCase(status)){
+            return taskRepository.findByCompleted(true);
+        }
+
+        if("pending".equalsIgnoreCase(status)){
+            return taskRepository.findByCompleted(false);
+        }
         return taskRepository.findAll();
     }
 

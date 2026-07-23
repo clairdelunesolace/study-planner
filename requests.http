@@ -11,6 +11,12 @@ Content-Type: application/json
 ###查看所有任务
 GET http://localhost:8080/api/tasks
 
+###查看已完成任务
+GET http://localhost:8080/api/tasks?status=completed
+
+###查看未完成任务
+GET http://localhost:8080/api/tasks?status=pending
+
 ###查看指定任务
 GET http://localhost:8080/api/tasks/1
 
