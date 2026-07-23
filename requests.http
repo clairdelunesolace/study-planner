@@ -36,5 +36,15 @@ Content-Type: application/json
 ### 标记任务完成
 PATCH http://localhost:8080/api/tasks/2/complete
 
-###删除任务
+### 删除任务
 DELETE http://localhost:8080/api/tasks/1
+
+### 注册用户
+POST http://localhost:8080/api/auth/register
+Content-Type:application/json
+
+{
+  "username": "shuai",
+  "email": "shuai@example.com",
+  "password": "password123"
+}
