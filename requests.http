@@ -48,3 +48,21 @@ Content-Type:application/json
   "email": "shuai@example.com",
   "password": "password123"
 }
+
+### 用户登陆成功
+POST http://localhost:8080/api/auth/login
+Content-Type: application/json
+
+{
+  "username": "shuai",
+  "password": "password123"
+}
+
+### 用户登陆失败
+POST http://localhost:8080/api/auth/login
+Content-Type: application/json
+
+{
+  "username": "shuai",
+  "password": "wrongpassword"
+}

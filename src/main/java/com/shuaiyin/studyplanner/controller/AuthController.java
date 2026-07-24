@@ -36,4 +36,26 @@ public class AuthController {
 
         return Map.of("message", "User registered successfully");
     }
+
+    @PostMapping("/login")
+    public Map<String, String> login(@RequestBody User loginRequest){
+
+        User user = userRepository.findByUsername(loginRequest.getUsername())
+                .orElse(null);
+
+        if(user == null){
+            return Map.of("message", "Invalid username or password");
+        }
+
+        boolean passwordMatches = passwordEncoder.matches(
+                loginRequest.getPassword(),
+                user.getPassword()
+        );
+
+        if(!passwordMatches){
+            return Map.of("message", "Invalid username or password");
+        }
+
+        return Map.of("message", "Login successful");
+    }
 }
